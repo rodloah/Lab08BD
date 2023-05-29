@@ -1,0 +1,72 @@
+<h1>{{title}}</h1>
+<p>Welcome to {{title}}</p>
+<h1>{{title}}</h1>
+
+<h1> Empleados</h1>
+    <p >
+        <div class="container">
+            <h3><a href="/usuarios/create">Crear Empleado</a></h3>
+            <h1>Lista de Empleados</h1>
+            {{#if usuarios }}
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th>Nombre</th>
+                            <th>Apellido</th>
+                            <th>Edad</th>
+                            <th>Email</th>
+                            <th>Estado</th>
+                            <th>N° Hijos</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {{# each usuarios }}
+                        <tr>
+                            <td><a href="/usuarios/show/{{ _id }}">{{ nombre }}</a></td>
+                            <td>{{ apellido }}</td>
+                            <td>{{ edad }}</td>
+                            <td>{{ email }}</td>
+                            <td>{{ estado }}</td>
+                            <td>{{ numhijos }}</td>
+                        </tr>
+                        {{/each}}
+                    </tbody>
+                </table>
+            {{~^~}}
+                <div>Usuarios no encontrados.</div>
+            {{/if}}
+        </div>
+    </p>
+<h1> Productos</h1>
+    <p >
+        <div class="container">
+            <h3><a href="/productos/createpro">Nuevo Producto</a></h3>
+            <h1>Lista de Productos</h1>
+            {{#if usuarios }}
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th>Nombre</th>
+                            <th>Tipo</th>
+                            <th>Cantidad</th>
+                            <th>Lote</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {{# each productos }}
+                        <tr>
+                            <td><a href="/productos/showpro/{{ _id }}">{{ nombre }}</a></td>
+                            <td>{{ tipo }}</td>
+                            <td>{{ precio }}</td>
+                            <td>{{ lote }}</td>
+                            
+                        </tr>
+                        {{/each}}
+                    </tbody>
+                </table>
+            {{~^~}}
+                <div>Productos no encontrados.</div>
+            {{/if}}
+        </div>
+    </p>
+
